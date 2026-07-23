@@ -45,6 +45,20 @@ ask for them by name.
 5. `npm run dev`, then open `http://localhost:3000`, sign up, and try
    uploading a real (or test) quote CSV.
 
+## Try the audit right now, with zero setup
+
+Before touching Supabase at all, you can run the actual "revenue at risk"
+audit against a real quote export — this is the 5-minute sales demo tool,
+usable on your laptop in front of a prospect:
+
+```bash
+npx tsx scripts/preview-import.ts samples/sample-quotes.csv
+```
+
+Swap in any real CSV export (Sage, Pastel, Excel — any column headers) to try
+it against a real business's data. It prints the same "revenue at risk"
+number and prioritised queue the dashboard shows, straight to your terminal.
+
 ## Running the tests
 
 ```bash
@@ -93,13 +107,19 @@ lib/
   rules-engine.test.ts
   runRulesEngine.ts        → wires the rules engine to the database
   ai/mapColumns.ts        → Claude-assisted column mapping, with fallback
-  import.ts               → turns one raw CSV row into a quote record
+  import.ts, import.test.ts → turns one raw CSV row into a quote record
   data.ts, types.ts        → typed reads from Supabase
   supabase/                → browser/server/service-role Supabase clients
-  money.ts                 → rand formatting/parsing
+  money.ts, money.test.ts  → rand formatting/parsing (handles both
+                             "20,000.50" and Sage/Pastel-style "20 000,50")
 supabase/migrations/       → the whole database schema, including row-level
                              security so each company only ever sees its own data
-scripts/run-rules-engine.ts → CLI entry point for the daily job
+samples/sample-quotes.csv  → a deliberately messy realistic quote export,
+                             for testing the import flow and the demo tool below
+scripts/
+  run-rules-engine.ts      → CLI entry point for the daily job
+  preview-import.ts        → run the whole audit against a CSV with zero
+                             setup — the 5-minute demo tool
 proxy.ts                   → session refresh + auth redirect (this Next.js
                               version renamed `middleware.ts` to `proxy.ts`)
 ```
