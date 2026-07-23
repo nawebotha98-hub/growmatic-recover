@@ -1,9 +1,12 @@
 # GrowMatic Recover
 
 Import a business's quote history, see the rand value of everything sitting
-unresolved, and keep watching so it never goes dark again. This is the
-scaffold for the GrowMatic SA product — see the strategy memo for the full
-market case; this README is just about running the code.
+unresolved, and keep watching so it never goes dark again.
+
+**This is GrowMatic SA's sole focus going forward.** Read
+[`docs/STRATEGY.md`](docs/STRATEGY.md) first — it's the durable record of why
+this product, why this customer, and what not to build yet. This README is
+just about running the code.
 
 ## What's actually built right now
 
