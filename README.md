@@ -104,12 +104,20 @@ outcome" are supposed to mean.
 
 ## Running the daily rules check
 
-Two ways to trigger it:
+The daily job re-checks every open quote and persists an exceptions
+audit-trail row for anything newly gone stale. Trigger it:
 
-- **Manually, locally:** `npm run rules:run`
-- **On a schedule, in production:** point any scheduler (Railway cron, a
-  GitHub Actions scheduled workflow, a Supabase cron job) at a daily
-  `POST` to `/api/run-rules` with header `x-cron-secret: <your secret>`.
+- **On Vercel (production):** already scheduled in `vercel.json` to run daily
+  at 04:00 UTC (06:00 SAST). For it to run, two environment variables must be
+  set in the Vercel project:
+  - `CRON_SECRET` — any long random string. Vercel automatically sends it as
+    `Authorization: Bearer <CRON_SECRET>` on the scheduled call, and the
+    endpoint checks it.
+  - `SUPABASE_SERVICE_ROLE_KEY` — the job reads across all tenants, so it needs
+    the service-role key (from Supabase → Project Settings → API).
+- **Manually, locally:** `npm run rules:run` (uses `.env.local`).
+- **Any other scheduler:** `POST`/`GET` to `/api/run-rules` with header
+  `x-cron-secret: <RULES_ENGINE_SECRET>`.
 
 ## Deploying
 
