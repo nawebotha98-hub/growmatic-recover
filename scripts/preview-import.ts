@@ -8,7 +8,7 @@
 // For a polished report you can email the owner, use generate-report.ts.
 // With ANTHROPIC_API_KEY set, column mapping is AI-assisted; without it,
 // this still works via keyword matching.
-import "dotenv/config";
+import "./loadEnv";
 import { readFileSync } from "node:fs";
 import Papa from "papaparse";
 import { mapColumnsWithAI } from "../lib/ai/mapColumns";

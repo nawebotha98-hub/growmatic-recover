@@ -1,7 +1,7 @@
 // Run the daily rules check by hand: `npm run rules:run`
 // Useful before you've wired up a cron scheduler, or to spot-check after
 // changing DEFAULT_THRESHOLDS in lib/rules-engine.ts.
-import "dotenv/config";
+import "./loadEnv";
 import { runRulesEngine } from "../lib/runRulesEngine";
 
 runRulesEngine()

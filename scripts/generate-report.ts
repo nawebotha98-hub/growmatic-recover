@@ -8,7 +8,7 @@
 // The output is a self-contained HTML file. Open it in a browser to read, or
 // print to PDF to attach to an email. With ANTHROPIC_API_KEY set, column
 // mapping is AI-assisted; without it, it falls back to keyword matching.
-import "dotenv/config";
+import "./loadEnv";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { basename } from "node:path";
 import Papa from "papaparse";

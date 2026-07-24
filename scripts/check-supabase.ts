@@ -5,7 +5,7 @@
 //   npx tsx scripts/check-supabase.ts
 //
 // It only reads — it creates and deletes nothing.
-import "dotenv/config";
+import "./loadEnv";
 import { createClient } from "@supabase/supabase-js";
 
 const REQUIRED_TABLES = ["companies", "profiles", "quotes", "exceptions", "resolutions"];
