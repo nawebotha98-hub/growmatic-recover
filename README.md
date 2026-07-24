@@ -33,8 +33,11 @@ ask for them by name.
 ## Setup (about 10 minutes)
 
 1. **Create a free Supabase project** at [supabase.com](https://supabase.com).
-2. In the SQL Editor, run the contents of `supabase/migrations/0001_init.sql`
-   once, against your new project.
+2. In the SQL Editor, run **each file in `supabase/migrations/` in order**
+   (`0001_init.sql`, then `0002_harden_security.sql`) against your new project.
+   `0001` creates the schema; `0002` applies security hardening that the
+   Supabase security advisor expects (keeps internal helper functions off the
+   public API). After running both, the advisor should report no issues.
 3. Copy `.env.example` to `.env.local` and fill in:
    - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` — from
      Project Settings → API.
