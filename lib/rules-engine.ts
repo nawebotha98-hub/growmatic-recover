@@ -29,8 +29,9 @@ export interface RuleThresholds {
 export const DEFAULT_THRESHOLDS: RuleThresholds = {
   staleAfterDays: 14,
   noOutcomeAfterDays: 30,
-  highValueStaleCents: 10_000_00, // R100,000
-  highValueNoOutcomeCents: 5_000_00, // R50,000
+  // Values are in cents, so R100,000 = 100_000 * 100 = 100_000_00.
+  highValueStaleCents: 100_000_00, // R100,000
+  highValueNoOutcomeCents: 50_000_00, // R50,000
 };
 
 export interface DetectedException {

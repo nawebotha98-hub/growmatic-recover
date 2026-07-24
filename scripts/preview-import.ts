@@ -5,23 +5,15 @@
 // Usage:
 //   npx tsx scripts/preview-import.ts samples/sample-quotes.csv
 //
-// With ANTHROPIC_API_KEY set in the environment, column mapping is
-// AI-assisted; without it, this still works via keyword matching.
+// For a polished report you can email the owner, use generate-report.ts.
+// With ANTHROPIC_API_KEY set, column mapping is AI-assisted; without it,
+// this still works via keyword matching.
 import "dotenv/config";
 import { readFileSync } from "node:fs";
 import Papa from "papaparse";
 import { mapColumnsWithAI } from "../lib/ai/mapColumns";
-import { buildQuoteInsert } from "../lib/import";
-import {
-  DEFAULT_THRESHOLDS,
-  detectExceptions,
-  prioritise,
-  revenueAtRiskCents,
-  type QuoteForRules,
-} from "../lib/rules-engine";
+import { runAudit } from "../lib/audit";
 import { formatRand } from "../lib/money";
-
-const PLACEHOLDER_COMPANY_ID = "preview";
 
 async function main() {
   const filePath = process.argv[2];
@@ -48,45 +40,23 @@ async function main() {
     console.log(`  ${field.padEnd(14)} → ${header ?? "(not mapped)"}`);
   }
 
-  const skippedReasons: string[] = [];
-  const quotes: QuoteForRules[] = [];
-  let index = 0;
+  const audit = runAudit(parsed.data, mapping);
 
-  for (const row of parsed.data) {
-    index++;
-    const { record, skippedReason } = buildQuoteInsert(row, mapping, PLACEHOLDER_COMPANY_ID);
-    if (!record) {
-      skippedReasons.push(`row ${index}: ${skippedReason}`);
-      continue;
-    }
-    quotes.push({
-      id: `row-${index}`,
-      valueCents: record.value_cents,
-      sentAt: new Date(record.sent_at),
-      status: record.status,
-      outcomeRecordedAt: record.outcome_recorded_at ? new Date(record.outcome_recorded_at) : null,
-    });
-  }
-
-  const exceptions = detectExceptions(quotes, DEFAULT_THRESHOLDS);
-  const atRisk = revenueAtRiskCents(quotes, DEFAULT_THRESHOLDS);
-  const queue = prioritise(quotes, exceptions);
-
-  console.log(`\nImported ${quotes.length} quotes, skipped ${skippedReasons.length}.`);
-  if (skippedReasons.length > 0) {
+  console.log(`\nImported ${audit.importedCount} quotes, skipped ${audit.skippedCount}.`);
+  if (audit.skippedReasons.length > 0) {
     console.log("Skipped rows:");
-    skippedReasons.forEach((r) => console.log(`  - ${r}`));
+    audit.skippedReasons.forEach((r) => console.log(`  - ${r}`));
   }
 
   console.log("\n" + "=".repeat(48));
-  console.log(`REVENUE AT RISK: ${formatRand(atRisk)}`);
-  console.log(`across ${exceptions.length} quotes with no clear outcome`);
+  console.log(`REVENUE AT RISK: ${formatRand(audit.revenueAtRiskCents)}`);
+  console.log(`across ${audit.flaggedCount} quotes with no clear outcome`);
   console.log("=".repeat(48));
 
   console.log("\nTop of the recovery queue:");
-  queue.slice(0, 10).forEach((item, i) => {
+  audit.queue.slice(0, 10).forEach((item, i) => {
     console.log(
-      `  ${i + 1}. ${formatRand(item.valueCents).padEnd(14)} ${item.ruleTriggered.padEnd(20)} (${item.daysSinceSent}d, ${item.severity})`
+      `  ${i + 1}. ${formatRand(item.valueCents).padEnd(14)} ${item.customerName.slice(0, 22).padEnd(24)} ${item.ruleTriggered.padEnd(20)} (${item.daysSinceSent}d, ${item.severity})`
     );
   });
   console.log("");

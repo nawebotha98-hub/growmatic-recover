@@ -62,6 +62,31 @@ Swap in any real CSV export (Sage, Pastel, Excel — any column headers) to try
 it against a real business's data. It prints the same "revenue at risk"
 number and prioritised queue the dashboard shows, straight to your terminal.
 
+### Generate a report you can actually send them
+
+The terminal output is for you; the report is for the prospect. Generate a
+polished, self-contained HTML report (open in a browser, print to PDF, email
+it) — this is the sales artefact Month 1 of the blueprint is built around:
+
+```bash
+npx tsx scripts/generate-report.ts their-export.csv "Their Company Name"
+```
+
+It writes to `reports/` (gitignored — these contain real customer data and
+must never be committed). Every customer-supplied value is HTML-escaped.
+
+## Field materials (for selling, not just building)
+
+- `docs/SALES-PLAYBOOK.md` — the outreach message, the conversation questions,
+  how to read real vs polite interest, and the close.
+- `docs/templates/prospect-tracker.csv` — a tracker to fill with 60–80 leads.
+- `docs/templates/pilot-agreement.md` — a plain-language founding-pilot agreement.
+- `docs/templates/privacy-notice.md` — a POPIA privacy notice, honest to how
+  the product is actually built.
+
+(The two legal templates are starting points, not legal advice — have them
+reviewed before relying on them.)
+
 ## Running the tests
 
 ```bash
@@ -108,6 +133,9 @@ app/
 lib/
   rules-engine.ts         → the core detection logic (pure, tested)
   rules-engine.test.ts
+  audit.ts, audit.test.ts  → the shared audit: CSV rows → structured result,
+                             used by both the terminal preview and the report
+  reportHtml.ts            → renders the emailable customer-facing HTML report
   runRulesEngine.ts        → wires the rules engine to the database
   ai/mapColumns.ts        → Claude-assisted column mapping, with fallback
   import.ts, import.test.ts → turns one raw CSV row into a quote record
@@ -121,8 +149,13 @@ samples/sample-quotes.csv  → a deliberately messy realistic quote export,
                              for testing the import flow and the demo tool below
 scripts/
   run-rules-engine.ts      → CLI entry point for the daily job
-  preview-import.ts        → run the whole audit against a CSV with zero
-                             setup — the 5-minute demo tool
+  preview-import.ts        → audit a CSV to the terminal, zero setup
+  generate-report.ts       → audit a CSV into an emailable HTML report
+docs/
+  STRATEGY.md              → the durable product decision and scope
+  90-DAY-BLUEPRINT.md      → the week-by-week execution plan
+  SALES-PLAYBOOK.md        → outreach, conversation, and closing scripts
+  templates/               → pilot agreement, privacy notice, prospect tracker
 proxy.ts                   → session refresh + auth redirect (this Next.js
                               version renamed `middleware.ts` to `proxy.ts`)
 ```

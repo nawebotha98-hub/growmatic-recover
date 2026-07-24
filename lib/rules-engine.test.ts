@@ -41,22 +41,41 @@ describe('detectException', () => {
     expect(result?.ruleTriggered).toBe('no_recorded_outcome');
   });
 
-  it('marks a high-value stale quote as high severity', () => {
+  it('marks a stale quote at/above R100,000 as high severity', () => {
     const result = detectException(
-      quote({ sentAt: daysAgo(15), valueCents: 15_000_00 }),
+      quote({ sentAt: daysAgo(15), valueCents: 120_000_00 }), // R120,000
       DEFAULT_THRESHOLDS,
       NOW
     );
     expect(result?.severity).toBe('high');
   });
 
-  it('marks a low-value stale quote as low severity', () => {
+  it('marks a stale quote below R100,000 as low severity', () => {
     const result = detectException(
-      quote({ sentAt: daysAgo(15), valueCents: 5_000_00 }),
+      quote({ sentAt: daysAgo(15), valueCents: 40_000_00 }), // R40,000 — real deal size, not "high"
       DEFAULT_THRESHOLDS,
       NOW
     );
     expect(result?.severity).toBe('low');
+  });
+
+  it('marks a no-outcome quote at/above R50,000 as high severity', () => {
+    const result = detectException(
+      quote({ sentAt: daysAgo(35), valueCents: 60_000_00 }), // R60,000
+      DEFAULT_THRESHOLDS,
+      NOW
+    );
+    expect(result?.ruleTriggered).toBe('no_recorded_outcome');
+    expect(result?.severity).toBe('high');
+  });
+
+  it('marks a no-outcome quote below R50,000 as medium severity', () => {
+    const result = detectException(
+      quote({ sentAt: daysAgo(35), valueCents: 20_000_00 }), // R20,000
+      DEFAULT_THRESHOLDS,
+      NOW
+    );
+    expect(result?.severity).toBe('medium');
   });
 
   it('never flags a won quote, no matter how old', () => {
