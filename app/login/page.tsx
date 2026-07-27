@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
@@ -71,10 +72,18 @@ export default function LoginPage() {
         onSubmit={handleSubmit}
         className="w-full max-w-sm bg-surface border border-border rounded-lg p-8"
       >
-        <h1 className="text-xl font-semibold mb-1">
+        <Image
+          src="/growmatic-logo.png"
+          alt="GrowMatic SA"
+          width={200}
+          height={200}
+          className="h-14 w-auto mx-auto mb-5"
+          priority
+        />
+        <h1 className="text-xl font-semibold mb-1 text-center">
           {mode === "sign-in" ? "Sign in" : "Create your account"}
         </h1>
-        <p className="text-sm text-foreground-dim mb-6">GrowMatic Recover</p>
+        <p className="text-sm text-foreground-dim mb-6 text-center">GrowMatic Recover</p>
 
         {mode === "sign-up" && (
           <label className="block mb-4">

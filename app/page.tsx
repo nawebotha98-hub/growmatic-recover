@@ -1,9 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function LandingPage() {
   return (
     <main className="flex-1 flex items-center justify-center px-6">
       <div className="max-w-xl text-center">
+        <Image
+          src="/growmatic-logo.png"
+          alt="GrowMatic SA"
+          width={200}
+          height={200}
+          className="h-16 w-auto mx-auto mb-5"
+          priority
+        />
         <p className="text-sm font-mono uppercase tracking-wide text-accent mb-4">
           GrowMatic Recover
         </p>

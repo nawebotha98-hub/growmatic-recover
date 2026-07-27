@@ -55,5 +55,12 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  // Static assets (the logo, favicon, etc.) must never require a session —
+  // this bit me once already: a plain PNG under /public got caught by the
+  // catch-all matcher and redirected to /login for signed-out visitors,
+  // which is exactly the audience most likely to be looking at the logo
+  // on the landing/login pages.
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:png|jpg|jpeg|svg|gif|webp|ico|css|js|woff2?|ttf)$).*)',
+  ],
 };
