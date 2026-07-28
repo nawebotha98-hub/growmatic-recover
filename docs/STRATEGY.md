@@ -50,7 +50,12 @@ outcome logging.
 
 **Build later — only once customers ask for it by name:** email ingestion,
 official WhatsApp Business Platform integration, direct Sage/Xero connectors,
-the renewals/warranty module, billing.
+the renewals/warranty module, billing, and Payment Recovery (chasing unpaid
+invoices post-job — already Stage 3 of the public roadmap on the website;
+a business-model canvas for it was proposed 28 July 2026 and is worth
+revisiting *when this stage is actually next*, not before — see the note
+in that day's conversation. Same rule applies: not until Quote Recovery has
+a real paying customer).
 
 **Do not build yet, full stop:** a CRM or field-service-management
 replacement, bank reconciliation, inventory, technician scheduling/GPS, any
