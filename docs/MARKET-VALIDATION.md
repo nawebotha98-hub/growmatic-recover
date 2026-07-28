@@ -140,3 +140,71 @@ research points to directly:
 - Security industry size: [trade.gov market intelligence](https://www.trade.gov/market-intelligence/south-africa-private-security-market-growth)
 - HVAC/refrigeration market size: [Spherical Insights](https://www.sphericalinsights.com/reports/south-africa-hvac-market), [6Wresearch](https://www.6wresearch.com/industry-report/south-africa-commercial-refrigeration-equipment-market-2020-2026)
 - WhatsApp adoption among SA township businesses: [AllAfrica/Standard Bank](https://allafrica.com/stories/202510200166.html)
+
+## Addendum, 28 July 2026 — a stronger angle surfaced mid-conversation
+
+Ewan disclosed he has zero personal network in solar/security/gate/HVAC
+(the current ICP), but has 10+ years as a sales executive in capital
+equipment — currently at Perfect Laser Technologies (11-50 staff,
+Randburg-based, sells CO2/fiber lasers, engravers, CNC machines to SA
+manufacturing/fabrication businesses). That changes the calculus: an ICP
+he has real network, credibility, and lived pain in beats a cold vertical
+every time, even if the cold vertical was validated on paper.
+
+### Research: is "lost quotes" a real pain point in capital equipment sales?
+
+Yes — arguably **more sharply evidenced** than the original trades ICP:
+
+- **71% of capital equipment deals lost to competition involved a
+  follow-up gap of 14+ days during the evaluation phase**
+  ([source](https://www.marketsandmarkets.com/AI-sales/why-sales-reps-stop-following-up-how-to-fix-it)).
+  Buyers don't pause evaluating just because a rep goes quiet — they move
+  to whichever vendor stays visible.
+- **CRM abandonment in equipment dealerships is a documented, specific
+  failure pattern**: dealerships that adopt standalone CRMs often see
+  sales teams stop using them within 60 days, because the CRM doesn't
+  know what's in stock, can't create a work order, can't pull current
+  pricing — so reps fall back to personal spreadsheets and email threads
+  ([Tractor Zoom Pro](https://www.tractorzoompro.com/blog/more-than-a-crm-sales-enablement-for-dealerships)).
+  This is a stronger validation of the "sits alongside, doesn't replace"
+  positioning than anything found for the trades ICP — it's not a guess
+  that a lightweight tool would be preferred, it's documented that heavy
+  tools get actively abandoned in this exact world.
+- Existing competitors in this space (Flyntlok, Texada, Softbase, Annata,
+  crmSeries) are full **Dealer Management Systems** — built for large
+  dealers with parts inventory, rental fleets, and service departments
+  (think heavy construction/agricultural equipment). None of them appear
+  built for a smaller multi-product seller like Perfect Laser (11-50
+  staff, no rental/service arm) — this looks like real whitespace, not
+  because the pain is different, but because the existing tools are the
+  wrong shape and size for this segment.
+- SA-wide: only ~35% of SA small businesses use any CRM at all
+  ([CRM Africa](https://crm.africa/blog/free-crm-for-small-business-south-africa-2/)) —
+  general confirmation most SA SMEs, including equipment sellers, are
+  still running on spreadsheets/email.
+- Relevant SA industry bodies for outreach if this direction is taken:
+  MTMA (Machine Tools Merchants' Association), SAAMA (agricultural
+  machinery), SACEEC (capital equipment export), MEMSA (mining equipment).
+
+### What's NOT yet verified
+
+All of the above is evidence from adjacent contexts (heavy/construction/
+agricultural equipment dealers), not proof that Perfect Laser specifically,
+or SA multi-product machine sellers specifically, have this exact problem
+day to day. The cheapest, fastest possible validation available to Ewan:
+**ask his own colleagues and sales team this week** whether quotes go cold
+without follow-up, and how often a deal is lost to silence rather than a
+real "no." That's a free, same-week test — no cold outreach required,
+because he already has the access.
+
+### Updated recommendation
+
+If that internal check confirms the pain is real at Perfect Laser and
+among people Ewan knows in the industry, **this is a stronger opportunity
+than the original solar/security/gate/HVAC ICP** — same product, same
+codebase, a market with sharper documented pain, weaker/wrong-shaped
+existing competition, and — critically — an ICP Ewan can sell into with
+real credibility and real relationships instead of cold outreach. This
+would mean changing `STRATEGY.md`'s "who it's for" section and the sales
+materials' target list, not the product itself. Not yet done — this is a
+recommendation pending Ewan's decision, not an executed pivot.
