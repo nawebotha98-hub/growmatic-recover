@@ -74,6 +74,17 @@ real target; R50,000 MRR by month 6 is not — that's realistically a month
 9–12 outcome, and treating it otherwise is how founders talk themselves into
 quitting a plan that was actually working.
 
+## Market validation (added 28 July 2026)
+
+A fresh research pass — real web research, not just reasoning — confirmed
+the pain point and market size are real, but surfaced closer competitors
+than BizAI alone (ClientPulse specifically, at R1,100/mo, undercutting and
+out-featuring the current price). Full detail, sources, and the
+recommendation in `docs/MARKET-VALIDATION.md`. Short version: keep going,
+don't pivot, but the pitch must stay a pre-signup diagnostic ("show me my
+number") and never drift into being perceived as quote-tracking software,
+because several competitors already sell that, some cheaper.
+
 ## Full research and 15-idea comparison
 
 The complete market research, competitor analysis, scoring of all 15
