@@ -144,12 +144,13 @@ research points to directly:
 ## Addendum, 28 July 2026 — a stronger angle surfaced mid-conversation
 
 Ewan disclosed he has zero personal network in solar/security/gate/HVAC
-(the current ICP), but has 10+ years as a sales executive in capital
-equipment — currently at Perfect Laser Technologies (11-50 staff,
-Randburg-based, sells CO2/fiber lasers, engravers, CNC machines to SA
-manufacturing/fabrication businesses). That changes the calculus: an ICP
-he has real network, credibility, and lived pain in beats a cold vertical
-every time, even if the cold vertical was validated on paper.
+(the current ICP), but has 10+ years of his own experience as a sales
+executive in capital equipment. **Note: this is about Ewan's own
+transferable background and skills, not his current employer — his 9-to-5
+job is unrelated to GrowMatic SA and is explicitly out of scope for this
+project; nothing here should reference it.** An ICP Ewan has genuine
+industry experience and credibility in beats a cold vertical every time,
+even if the cold vertical was validated on paper.
 
 ### Research: is "lost quotes" a real pain point in capital equipment sales?
 
@@ -174,10 +175,10 @@ Yes — arguably **more sharply evidenced** than the original trades ICP:
   crmSeries) are full **Dealer Management Systems** — built for large
   dealers with parts inventory, rental fleets, and service departments
   (think heavy construction/agricultural equipment). None of them appear
-  built for a smaller multi-product seller like Perfect Laser (11-50
-  staff, no rental/service arm) — this looks like real whitespace, not
-  because the pain is different, but because the existing tools are the
-  wrong shape and size for this segment.
+  built for a smaller multi-product equipment seller (11-50 staff, no
+  rental/service arm) — this looks like real whitespace, not because the
+  pain is different, but because the existing tools are the wrong shape
+  and size for this segment.
 - SA-wide: only ~35% of SA small businesses use any CRM at all
   ([CRM Africa](https://crm.africa/blog/free-crm-for-small-business-south-africa-2/)) —
   general confirmation most SA SMEs, including equipment sellers, are
@@ -189,22 +190,22 @@ Yes — arguably **more sharply evidenced** than the original trades ICP:
 ### What's NOT yet verified
 
 All of the above is evidence from adjacent contexts (heavy/construction/
-agricultural equipment dealers), not proof that Perfect Laser specifically,
-or SA multi-product machine sellers specifically, have this exact problem
-day to day. The cheapest, fastest possible validation available to Ewan:
-**ask his own colleagues and sales team this week** whether quotes go cold
-without follow-up, and how often a deal is lost to silence rather than a
-real "no." That's a free, same-week test — no cold outreach required,
-because he already has the access.
+agricultural equipment dealers), not proof that any specific smaller SA
+multi-product machine seller has this exact problem day to day. It also
+doesn't yet answer whether Ewan has real reachable contacts in this
+industry *outside* his employer — that's the open question, not
+something to resolve by using his current job's colleagues or customers,
+which is explicitly off-limits for this project.
 
 ### Updated recommendation
 
-If that internal check confirms the pain is real at Perfect Laser and
-among people Ewan knows in the industry, **this is a stronger opportunity
-than the original solar/security/gate/HVAC ICP** — same product, same
-codebase, a market with sharper documented pain, weaker/wrong-shaped
-existing competition, and — critically — an ICP Ewan can sell into with
-real credibility and real relationships instead of cold outreach. This
-would mean changing `STRATEGY.md`'s "who it's for" section and the sales
-materials' target list, not the product itself. Not yet done — this is a
-recommendation pending Ewan's decision, not an executed pivot.
+This angle is only worth pursuing if Ewan has real industry access that
+has nothing to do with his current employer (a previous role, industry
+contacts made independently, associations, LinkedIn network built on his
+own). If that access exists, this looks like a stronger opportunity than
+the original solar/security/gate/HVAC ICP — same product, same codebase,
+a market with sharper documented pain, and weaker/wrong-shaped existing
+competition. If it doesn't exist independent of his job, this angle
+should be dropped, since the entire rationale was real access — without
+it, this is just another cold vertical, no better than the original one.
+Not yet decided — pending Ewan's answer, not an executed pivot.
