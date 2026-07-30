@@ -55,28 +55,66 @@ listen. These are the questions:
 4. What happens when a customer replies three weeks later asking for a small
    change — how does that get picked up?
 5. Where do you record whether a quote was won or lost?
-6. Last one — could you export the last few months of quotes from
-   [Sage/Pastel/their system] as a spreadsheet?
 
 If they can't answer 3 and they hesitate on 2 and 5, you've found the pain.
-Question 6 is the ask — get the export.
 
-## Step 4 — Reading the signals
+**Do not jump straight to asking for the full export here.** A stranger
+who WhatsApped them out of nowhere asking for their customer list and deal
+values is a big ask with zero trust behind it yet — a sensible owner
+should hesitate at that, and did in early testing of this exact script.
+Lower the ask first (Step 3b), and only raise it once there's a reason to
+say yes.
+
+## Step 3b — The rough number (no data changes hands)
+
+Ask two harmless, round numbers out loud — nothing sensitive:
+
+> Roughly how many quotes do you send a month, and roughly what's an
+> average one worth?
+
+Do the same rough math the website's own calculator does, live, in the
+conversation: quotes/month × (a conservative fraction that typically go
+quiet, e.g. 1 in 4) × average value. Say the resulting number out loud.
+
+This is the actual hook — it costs them nothing to answer, and if it
+lands, they've just heard a real rand figure about their own business
+before handing over a single customer name.
+
+## Step 4 — The real ask, only after the rough number lands
+
+If they react ("wait, seriously?" / visibly surprised) — now ask for the
+real thing, and make it easy to say yes to:
+
+> That's a rough guess. I can get you the exact number if you send your
+> actual quote list — happy to do it live on a screen-share where you
+> keep the file on your own screen the whole time, or I'll send our
+> one-page privacy commitment first if that's easier.
+
+Both options remove the actual objection (handing sensitive data to an
+unproven stranger) instead of just asking them to trust you anyway:
+screen-share means the file never leaves their machine; the privacy
+notice (`docs/templates/privacy-notice.md`) is a written commitment they
+can read before deciding.
+
+## Step 5 — Reading the signals
 
 **Real pain (keep going):**
 - They can't tell you the value sitting open, and it visibly bothers them.
 - They volunteer stories ("ja, we lost a big one last year because...").
-- They send the export, or agree to, without much chasing.
+- They react to the rough number, and send the real export (or agree to a
+  screen-share) without much chasing.
 - They ask what you'd do about it.
 
 **Polite interest (thank them, move on — don't chase):**
 - "Sounds useful" / "interesting" with no specifics.
-- They won't share data ("I'd have to check with...").
+- The rough number doesn't land — no real reaction either way.
+- They won't share data even with the screen-share/privacy-notice options
+  offered ("I'd have to check with...").
 - Vague answers about how follow-up "just happens".
 
 Do not spend week 2 chasing polite nos. Spend it on the people who leaned in.
 
-## Step 5 — The audit report (the demo)
+## Step 6 — The audit report (the demo)
 
 Take their export and run it:
 
@@ -93,7 +131,7 @@ guaranteed to recover — it's the value of quotes nobody can currently account
 for. Overpromising here destroys trust and it's built into the report's
 wording for a reason. Under-claim; let the number speak.
 
-## Step 6 — The close
+## Step 7 — The close
 
 In the same conversation as the report, ask directly. Don't leave it open.
 
