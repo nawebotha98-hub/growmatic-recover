@@ -55,12 +55,28 @@ already verified correct.
   against a messy real-world sample export
 
 **Website (growmaticsa.com):**
+- **4 August:** Homepage (`growmatic-sa/index.html`) fully replaced with the
+  "GrowMatic Recovery" design (Claude Design import): calculator-led hero
+  ("The money is already in your quotes."), scrolling trust band, problem
+  section, an interactive revenue calculator, 4-step audit walkthrough,
+  cost/stats/POPIA band, final CTA. Same design shipped simultaneously on
+  the product app's own landing page (`growmatic-recover/app/page.tsx`) so
+  both surfaces match. Self-hosted Sora + Manrope (same convention as
+  before). Deploy confirmed green via Actions API; could not verify the
+  live domain directly from this session (network egress policy doesn't
+  allow arbitrary external hosts) — worth a manual eyeball on
+  growmaticsa.com to confirm.
+  - **Known regression:** the old homepage loaded `chat-widget.js` (the
+    "Matt" WhatsApp-backed chat widget). The new design has no matching
+    markup for it, so it's not included and the widget no longer appears
+    on the homepage. WhatsApp CTAs throughout the new page cover the same
+    job, but if the live chat specifically is wanted back, it needs its
+    markup (`chat-launcher`/`chat-panel`/etc., see `chat-widget.js`)
+    re-added to `index.html`.
+  - Footer legal links now point at the real privacy.html/terms.html/
+    popia.html pages instead of "#" placeholders.
 - Rebuilt around Quote Recovery exclusively (no more generic "AI agency"
   positioning anywhere on it)
-- Hero redesigned this week: dark editorial composition, real dashboard
-  preview (not a generic phone mockup), self-hosted fonts (was silently
-  falling back to a system font for some visitors — fixed), fixed a
-  chat-widget overlap bug, fixed invisible text and accent contrast
 - GitHub Pages deploy pipeline confirmed healthy, custom domain (CNAME)
   correctly pointed here
 - The competing `growmaticsa-com` (Lovable) repo's auto-deploy is disabled
