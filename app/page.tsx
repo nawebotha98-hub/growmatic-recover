@@ -1475,13 +1475,13 @@ export default function LandingPage() {
                   Legal
                 </div>
                 <div style={{ display: "grid", gap: 14, fontSize: 15 }}>
-                  <a href="#" style={{ color: "#aab2c0" }}>
+                  <a href="https://growmaticsa.com/privacy.html" style={{ color: "#aab2c0" }}>
                     Privacy Policy
                   </a>
-                  <a href="#" style={{ color: "#aab2c0" }}>
+                  <a href="https://growmaticsa.com/popia.html" style={{ color: "#aab2c0" }}>
                     POPIA Notice
                   </a>
-                  <a href="#" style={{ color: "#aab2c0" }}>
+                  <a href="https://growmaticsa.com/terms.html" style={{ color: "#aab2c0" }}>
                     Terms of Service
                   </a>
                 </div>
