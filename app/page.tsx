@@ -205,6 +205,19 @@ export default function LandingPage() {
           font-variant-numeric: tabular-nums lining-nums;
           font-feature-settings: "tnum" 1, "lnum" 1;
         }
+        @media (max-width: 900px) {
+          #calculator-grid, #honest-grid, #popia-grid, #cta-grid { grid-template-columns: 1fr !important; }
+          #problem-grid, #audit-grid { grid-template-columns: 1fr 1fr !important; }
+          #hero-ticks { grid-template-columns: 1fr 1fr !important; }
+          #footer-grid { grid-template-columns: 1fr 1fr !important; row-gap: 40px !important; }
+          nav#site-nav { display: none !important; }
+        }
+        @media (max-width: 560px) {
+          #problem-grid, #audit-grid { grid-template-columns: 1fr !important; }
+          #footer-grid { grid-template-columns: 1fr !important; }
+          #footer-bottom { grid-template-columns: 1fr !important; text-align: center !important; }
+          #footer-bottom span { text-align: center !important; }
+        }
         @keyframes growmatic-drift {
           0%,
           100% {
@@ -313,6 +326,7 @@ export default function LandingPage() {
                 />
               </a>
               <nav
+                id="site-nav"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -487,6 +501,7 @@ export default function LandingPage() {
                   </a>
                 </div>
                 <div
+                  id="hero-ticks"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(4, 1fr)",
@@ -662,7 +677,7 @@ export default function LandingPage() {
                   A quote is not the finish line. It only feels like one.
                 </h2>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              <div id="problem-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
                 {problems.map((p) => (
                   <div
                     key={p.n}
@@ -715,7 +730,7 @@ export default function LandingPage() {
                   filter: "blur(10px)",
                 }}
               />
-              <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+              <div id="calculator-grid" style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                 <div style={{ padding: "48px 46px" }}>
                   <div
                     style={{
@@ -965,7 +980,7 @@ export default function LandingPage() {
                   Fifteen minutes. Your screen, your records.
                 </h2>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
+              <div id="audit-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
                 {steps.map((s) => (
                   <div
                     key={s.n}
@@ -1033,6 +1048,7 @@ export default function LandingPage() {
             <div style={{ position: "relative", zIndex: 1 }}>
               <section id="honest" style={{ maxWidth: 1200, margin: "0 auto", padding: "76px 28px 40px" }}>
                 <div
+                  id="honest-grid"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 1.15fr",
@@ -1185,6 +1201,7 @@ export default function LandingPage() {
               {/* POPIA */}
               <section style={{ maxWidth: 1200, margin: "0 auto", padding: "0 28px 84px" }}>
                 <div
+                  id="popia-grid"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 1.3fr",
@@ -1289,6 +1306,7 @@ export default function LandingPage() {
                 }}
               />
               <div
+                id="cta-grid"
                 style={{
                   position: "relative",
                   display: "grid",
@@ -1372,6 +1390,7 @@ export default function LandingPage() {
             }}
           >
             <div
+              id="footer-grid"
               style={{
                 maxWidth: 1200,
                 margin: "0 auto",
@@ -1512,6 +1531,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div
+              id="footer-bottom"
               style={{
                 maxWidth: 1200,
                 margin: "0 auto",
